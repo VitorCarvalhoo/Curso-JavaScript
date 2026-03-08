@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            background-color: rgb(90, 154, 184);
+            color: white;
+            font: normal 20pt Arial;
+        }
+
+        #area {
+            background-color: rgb(24, 24, 24);
+            color: white;
+            width: auto;
+            height: auto;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introdução ao DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+ 
+    <h2>Eventos DOM</h2>
+    <div id="area">Interaja comigo!</div>
+    <script>
+        var body = window.document.body;
+        var p1 = window.document.getElementsByTagName('p')[1];
+        var msg = window.document.querySelector('div#msg');
+
+        /* Eventos DOM */
+        var area = window.document.querySelector('div#area');
+        area.addEventListener('click', clicou);
+        area.addEventListener('mouseover', entrou);
+        area.addEventListener('mouseout', saiu);
+        
+        function clicou() {
+            area.innerHTML = 'Clicou!';
+            area.style.backgroundColor = 'red';
+        }
+
+        function entrou() {
+            area.innerHTML = 'Entrou!';
+            area.style.cursor = 'pointer';
+        }
+
+        function saiu() {
+            area.innerHTML = 'Saiu!';
+            area.style.backgroundColor = 'rgb(24, 24, 24)';
+        }
+    </script>
+</body>
+</html>
